@@ -1,5 +1,7 @@
 #!/bin/bash -x
+
 echo "Welcome to Arithmetic Computations"
+
 #Declared a dictionary
 declare -A resultsDictionary
 
