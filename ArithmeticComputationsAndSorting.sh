@@ -1,4 +1,6 @@
 #!/bin/bash -x
+#VARIABLE
+number=1
 
 echo "Welcome to Arithmetic Computations"
 declare -A resultsDictionary
@@ -15,5 +17,11 @@ resultsDictionary[result1]=$result1
 resultsDictionary[result2]=$result2
 resultsDictionary[result3]=$result3
 resultsDictionary[result4]=$result4
+
+while (( $number <= ${#resultsDictionary[@]} ))
+do
+	array[$number-1]=${resultsDictionary[result$number]}
+	number=$((number+1))
+done
 
 
