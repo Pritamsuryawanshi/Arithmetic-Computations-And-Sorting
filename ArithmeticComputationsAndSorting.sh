@@ -31,7 +31,7 @@ do
 done
 
 
-#Sorting The Array in descending order
+#Sorting The Array in Descending order
 for ((i=0; i<$((${#array[@]}-1)); i++ ))
 do
 	for (( j=i+1; j<${#array[@]}; j++))
@@ -47,4 +47,18 @@ done
 
 echo "Results in descending order:  " ${array[@]}
 
+#Sorting The Array in Ascending order
+for ((i=0; i<$((${#array[@]}-1)); i++ ))
+do
+	for (( j=i+1; j<${#array[@]}; j++))
+	do
+		if (( ${array[i]%.*} > ${array[j]%.*} ))
+		then
+			temp=${array[i]}
+			array[i]=${array[j]}
+			array[j]=$temp
+		fi
+	done
+done
 
+echo "Results in Ascending order:  " ${array[@]}
